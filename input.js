@@ -3,53 +3,52 @@ const input_increaseButton = document.querySelector("input.increaseButton");
 const input_decreaseButton = document.querySelector("input.decreaseButton");
 const input_stepArea = document.querySelector("input.stepArea");
 
+function decreaseButtonAction(e) {
+  var temp = textarea_outputNum.textContent;
+  var temp2 = input_stepArea.value;
+  temp *= 1;
+  temp2 *= 1;
+  temp -= temp2;
+  textarea_outputNum.textContent = temp;
+}
 
-function decreaseButtonAction(e){
+function increaseButtonAction(e) {
+  var temp = textarea_outputNum.textContent;
+  var temp2 = input_stepArea.value;
+  temp *= 1;
+  temp2 *= 1;
+  temp += temp2;
+  textarea_outputNum.textContent = temp;
+}
+
+function decreaseKeyAction(e) {
+  const keyCode = e.key;
+  if (keyCode === "-") {
     var temp = textarea_outputNum.textContent;
     var temp2 = input_stepArea.value;
     temp *= 1;
     temp2 *= 1;
     temp -= temp2;
     textarea_outputNum.textContent = temp;
+  }
 }
 
-function increaseButtonAction(e){
+function increaseKeyAction(e) {
+  const keyCode = e.key;
+  if (keyCode === "+") {
     var temp = textarea_outputNum.textContent;
     var temp2 = input_stepArea.value;
     temp *= 1;
     temp2 *= 1;
     temp += temp2;
     textarea_outputNum.textContent = temp;
-}
-
-function decreaseKeyAction(e){
-    const keyCode = e.key;
-    if(keyCode === '-'){
-        var temp = textarea_outputNum.textContent;
-        var temp2 = input_stepArea.value;
-        temp *= 1;
-        temp2 *= 1;
-        temp -= temp2;
-        textarea_outputNum.textContent = temp;
-    }
-}
-
-function increaseKeyAction(e){
-    const keyCode = e.key;
-    if(keyCode === '+'){
-        var temp = textarea_outputNum.textContent;
-        var temp2 = input_stepArea.value;
-        temp *= 1;
-        temp2 *= 1;
-        temp += temp2;
-        textarea_outputNum.textContent = temp;
-    }
+  }
 }
 
 document.addEventListener("keydown", increaseKeyAction);
 document.addEventListener("keydown", decreaseKeyAction);
-input_increaseButton.addEventListener("click", increaseButtonAction)
-input_decreaseButton.addEventListener("click", decreaseButtonAction)
+input_increaseButton.addEventListener("click", increaseButtonAction);
+input_decreaseButton.addEventListener("click", decreaseButtonAction);
 
 /*https://developer.mozilla.org/ko/docs/Web/API/Document/querySelector,
 https://developer.mozilla.org/ko/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors - querySelector(), DOM요소 선택자*/
