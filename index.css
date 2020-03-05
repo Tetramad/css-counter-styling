@@ -1,0 +1,76 @@
+body {
+  background-color: hsl(0, 0%, 33%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  height: 80vh;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template:
+    "display display increase" 1fr
+    "display display decrease" 1fr
+    "step    step    reset  " 20vmin
+    / 1fr 1fr 20vmin;
+}
+
+body > textarea {
+  grid-area: display;
+  text-align: center;
+  overflow: hidden;
+  font-size: 20vh;
+  resize: none;
+  border: none;
+  background-color: inherit;
+  color: whitesmoke;
+}
+
+body > span {
+  visibility: hidden;
+}
+
+body > input {
+  font-size: 10vmin;
+  border: none;
+  background-color: hsl(16, 70%, 66%);
+  color: whitesmoke;
+}
+
+body > input:active {
+  padding: 0;
+}
+
+.increaseButton {
+  grid-area: increase;
+  margin-top: 50%;
+  height: 20vmin;
+  width: 20vmin;
+  border-radius: 5vmin 5vmin 0% 0%;
+}
+
+.decreaseButton {
+  grid-area: decrease;
+  margin-bottom: 50%;
+  height: 20vmin;
+  width: 20vmin;
+  border-radius: 0% 0% 5vmin 5vmin;
+}
+
+.stepArea {
+  grid-area: step;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 10vh;
+  border-radius: 5vmin 0% 0% 5vmin;
+  box-sizing: border-box;
+}
+
+.resetButton {
+  grid-area: reset;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  font-size: 5vmin;
+  border-radius: 0% 5vmin 5vmin 0%;
+}
