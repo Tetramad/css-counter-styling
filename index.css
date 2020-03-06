@@ -17,19 +17,20 @@ body {
   grid-template:
     "display display increase" 30vh
     "display display decrease" 30vh
-    "step    step    reset  " 20vmin
+    ".       .       .       " 1vmin
+    "step    step    reset   " 19vmin
     / 30vw 30vw 20vmin;
 }
 
 body > textarea {
   grid-area: display;
   position: absolute;
-  height: 60vmin;
-  width: 60vmin;
+  height: 60vh;
+  width: 60vw;
   text-align: center;
   overflow: hidden;
-  line-height: 3em;
-  font-size: 20vh;
+  line-height: 60vh;
+  font-size: 20vmin;
   resize: none;
   border-radius: 5vmin 0% 0% 5vmin;
   border: none;
@@ -63,7 +64,7 @@ body > input:active {
   grid-area: increase;
   position: absolute;
   bottom: 0;
-  height: 30vmin;
+  height: 30vh;
   width: 20vmin;
   border-radius: 0% 5vmin 0% 0%;
 }
@@ -72,7 +73,7 @@ body > input:active {
   grid-area: decrease;
   position: absolute;
   top: 0;
-  height: 30vmin;
+  height: 30vh;
   width: 20vmin;
   border-radius: 0% 0% 5vmin 0%;
 }
@@ -84,7 +85,7 @@ body > input:active {
   height: 100%;
   width: 100%;
   text-align: center;
-  font-size: 10vh;
+  font-size: 10vmin;
   border-radius: 5vmin 0% 0% 5vmin;
   box-sizing: border-box;
 }
