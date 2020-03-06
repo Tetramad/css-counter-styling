@@ -50,8 +50,7 @@ body > input {
   transition: background-color .5s;
 }
 
-body > input:hover,
-body > input:active {
+body > input:hover {
   background-color: var(--dark-color);
   color: white;
 }
