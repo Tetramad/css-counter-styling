@@ -1,5 +1,12 @@
+:root {
+  --main-color: #d7fffd;
+  --shadow-color: #a1e6e3;
+  --sub-color: #eca0b6;
+  --alt-color: #fafba4;
+}
+
 body {
-  background-color: hsl(0, 0%, 33%);
+  background-color: var(--main-color);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -22,7 +29,7 @@ body > textarea {
   resize: none;
   border: none;
   background-color: inherit;
-  color: whitesmoke;
+  color: var(--sub-color);
 }
 
 body > span {
@@ -32,8 +39,8 @@ body > span {
 body > input {
   font-size: 10vmin;
   border: none;
-  background-color: hsl(16, 70%, 66%);
-  color: whitesmoke;
+  background-color: var(--alt-color);
+  color: var(--sub-color);
 }
 
 body > input:active {
@@ -42,7 +49,8 @@ body > input:active {
 
 .increaseButton {
   grid-area: increase;
-  margin-top: 50%;
+  position: absolute;
+  bottom: 0;
   height: 20vmin;
   width: 20vmin;
   border-radius: 5vmin 5vmin 0% 0%;
@@ -50,7 +58,8 @@ body > input:active {
 
 .decreaseButton {
   grid-area: decrease;
-  margin-bottom: 50%;
+  position: absolute;
+  top: 0;
   height: 20vmin;
   width: 20vmin;
   border-radius: 0% 0% 5vmin 5vmin;
@@ -58,6 +67,8 @@ body > input:active {
 
 .stepArea {
   grid-area: step;
+  position: absolute;
+  right: 0;
   height: 100%;
   width: 100%;
   text-align: center;
