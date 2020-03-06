@@ -1,12 +1,12 @@
 :root {
-  --main-color: #d7fffd;
-  --shadow-color: #a1e6e3;
-  --sub-color: #eca0b6;
-  --alt-color: #fafba4;
+  --background-color: #edffea;
+  --main-color: #aae9cd;
+  --dark-color: #216353;
+  --font-color: #7a4d1d;
 }
 
 body {
-  background-color: var(--main-color);
+  background-color: var(--background-color);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -15,21 +15,26 @@ body {
   transform: translate(-50%, -50%);
   display: grid;
   grid-template:
-    "display display increase" 1fr
-    "display display decrease" 1fr
+    "display display increase" 30vh
+    "display display decrease" 30vh
     "step    step    reset  " 20vmin
-    / 1fr 1fr 20vmin;
+    / 30vw 30vw 20vmin;
 }
 
 body > textarea {
   grid-area: display;
+  position: absolute;
+  height: 60vmin;
+  width: 60vmin;
   text-align: center;
   overflow: hidden;
+  line-height: 3em;
   font-size: 20vh;
   resize: none;
+  border-radius: 5vmin 0% 0% 5vmin;
   border: none;
-  background-color: inherit;
-  color: var(--sub-color);
+  background-color: var(--main-color);
+  color: var(--font-color);
 }
 
 body > span {
@@ -39,8 +44,15 @@ body > span {
 body > input {
   font-size: 10vmin;
   border: none;
-  background-color: var(--alt-color);
-  color: var(--sub-color);
+  background-color: var(--main-color);
+  color: var(--font-color);
+  transition: background-color .5s;
+}
+
+body > input:hover,
+body > input:active {
+  background-color: var(--dark-color);
+  color: white;
 }
 
 body > input:active {
@@ -51,18 +63,18 @@ body > input:active {
   grid-area: increase;
   position: absolute;
   bottom: 0;
-  height: 20vmin;
+  height: 30vmin;
   width: 20vmin;
-  border-radius: 5vmin 5vmin 0% 0%;
+  border-radius: 0% 5vmin 0% 0%;
 }
 
 .decreaseButton {
   grid-area: decrease;
   position: absolute;
   top: 0;
-  height: 20vmin;
+  height: 30vmin;
   width: 20vmin;
-  border-radius: 0% 0% 5vmin 5vmin;
+  border-radius: 0% 0% 5vmin 0%;
 }
 
 .stepArea {
